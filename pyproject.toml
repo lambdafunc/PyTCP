@@ -4,14 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "PyTCP"
-version = "2.7.7"
+version = "2.7.10"
 description = "TCP/IP stack written in Python."
 readme = "README.md"
 authors = [{ name = "Sebastian Majewski", email = "ccie18643@gmail.com" }]
-license = { file = "LICENSE" }
+license = "GPL-3.0-or-later"
 classifiers = [
     "Programming Language :: Python :: 3.12",
-    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     "Development Status :: 3 - Alpha",
     "Operating System :: POSIX :: Linux",
     "Natural Language :: English",
@@ -20,8 +19,25 @@ classifiers = [
     "Typing :: Typed",
 ]
 keywords = ["pytcp", "stack", "networking", "tcp", "ip", "ipv4", "ipv6", "arp", "ethernet", "icmp"]
-dependencies = []
 requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "black>=25.1.0",
+    "build>=1.2.2.post1",
+    "click>=8.1.8",
+    "codespell>=2.4.1",
+    "flake8>=7.2.0",
+    "ipython>=9.2.0",
+    "isort>=6.0.1",
+    "mypy>=1.15.0",
+    "pylint>=3.3.7",
+    "pyre-check>=0.9.23",
+    "pyupgrade>=3.19.1",
+    "testslide>=2.7.1",
+    "twine>=6.1.0",
+]
 
 [project.urls]
 "Homepage" = "https://github.com/ccie18643/PyTCP"
@@ -51,3 +67,7 @@ no_implicit_optional = true
 warn_return_any = true
 warn_unused_ignores = true
 show_error_codes = true
+
+[tool.setuptools.packages.find]
+include = ["pytcp"]
+
